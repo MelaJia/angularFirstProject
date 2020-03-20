@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myNodeApp">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body,
+    html {
+        margin: 10px;
+        height: 100%;
+    }
+
+    .container {
+        background: yellow;
+        box-sizing: border-box;
+        padding: 10px;
+        width: 400px;
+    }
+
+    .container div:nth-child(1) {
+        margin-bottom: 15px;
+
+    }
+
+    textarea {
+        margin-bottom: 15px;
+        resize: none;
+    }
+    .reset{
+        font-size: 13px;
+        color: #333333;
+        margin-top: 10px;
+    }
+</style>
+
+<body ng-controller="myNoteCtrl">
+    <div class="container">
+        <div>我的笔记</div>
+        <div>
+            <textarea class="" ng-model="message" placeholder="请输入笔记内容" rows="10" cols="40">
+        </textarea>
+        </div>
+        <button ng-click="save()">保存</button>
+        <button ng-click="clear()">清除</button>
+        <div class="reset">剩余字数：<span ng-bind="reset()"></span></div>
+    </div>
+
+    <script src="App.js"></script>
+    <script src="myNoteCtrl.js"></script>
+
+</body>
+
+</html>
